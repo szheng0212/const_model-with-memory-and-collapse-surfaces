@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-10-04 22:11:59
-LastEditTime: 2021-10-06 19:57:11
+LastEditTime: 2021-10-06 22:31:37
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: \Constitutive_Model_parameter_optimization_version0908\Steffensen_Iteration.py
@@ -31,6 +31,8 @@ def theta_iteration(sgm0, theta_n1, dp_n1, coefficient, stress_trial, a_array_n,
     # 试算该试计算状态下的试塑性应变与第n步的记忆面模型,崩溃目标面模型的关系
     index_g_n1_trial = Heaviside(location_g, radius_g, peps_n1)
     index_c_n1_trial = Heaviside(location_c, radius_c, peps_n1)
+    # 计算第n步的状态与记忆面模型的关系
+    index_g_n = Heaviside(location_g, radius_g, peps_n)
     # 另外计算第n步的记忆面状态
 
     if index_c_n1_trial > 0:
